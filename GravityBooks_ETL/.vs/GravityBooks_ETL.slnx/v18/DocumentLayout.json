@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\ITI Data Engineering\\DWH Project\\GravityBooks_ETL\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{656DCA37-BA5D-CCF1-0364-6DDA2565BD4E}|GravityBooks_ETL\\GravityBooks_ETL.dtproj|D:\\ITI Data Engineering\\DWH Project\\GravityBooks_ETL\\GravityBooks_ETL\\Package.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
+      "RelativeMoniker": "D:0:0:{656DCA37-BA5D-CCF1-0364-6DDA2565BD4E}|GravityBooks_ETL\\GravityBooks_ETL.dtproj|solutionrelative:GravityBooks_ETL\\Package.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Package.dtsx [Design]",
+              "DocumentMoniker": "D:\\ITI Data Engineering\\DWH Project\\GravityBooks_ETL\\GravityBooks_ETL\\Package.dtsx",
+              "RelativeDocumentMoniker": "GravityBooks_ETL\\Package.dtsx",
+              "ToolTip": "D:\\ITI Data Engineering\\DWH Project\\GravityBooks_ETL\\GravityBooks_ETL\\Package.dtsx [Design]",
+              "RelativeToolTip": "GravityBooks_ETL\\Package.dtsx [Design]",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANbSURBVEhLtZVPbBR1FMc/0z/WlrYsalsqFEJrW4uaNo0nEhMCB4wHDhJCwkVTFYkaTTDxogdPGI0XTkRNtIfGhnirxkgkAuqBmxg0CkhCgUAr3Xa73bYzO\u002B\u002BPh9nZdretN77JL3kz7/f7zPu99/IGHoTcPUjtz8fP5oef7m02N1QNVUdNUYVYFDVHVBF1frvyZ\u002B7X82ffOv/t2NeVxHV0euz7vJWkqmuWqJpIsk59OWEfnz4TPXdw5MVqTqqa1BDR8ssgCNasmiCgpiaAIGA5jBjaPVDf2//UV08M7z9aPrhKZbCaVXrWkQFuzu27U5w89RlXr/3Tkmnf\u002BUX1PlaD41gqPVUyB1MnVufDEyO8f\u002BJN3j72Mt27djVW7wWoSw3VlVR88s21sg3w3uE\u002Bxi/c4s5MCDjusG9wK709Ozn386WKvalW5VhwT\u002BwZa2Qq081UppuZKEDMmV8UpjPdTGd6uL9pO2HREHGsdKZaFcXbaJMZVLvMHDHH02iqtAJWxVKyxATLBYLlApgiYrhTfhdES6iRRLxBzVeKJ1KO\u002BPi\u002BDt54to7Xh\u002BsY2bsNMdg/1M7R3QFH\u002BuHQk/V0ZBoQ9TU3SbXSbqWI3WFnRxM72pvY3tbE4481IWo82tJA5\u002BZG2jc30pZ5mLra2iQVG4RcUTw1x9wZ/XGS0XOTjP00yfiFW4hALEZRDVFHxFEFFWd9bFXx1Bwz52qulr9qu/i7rosbs4KqIwJqXp4jsRqxOb4BeaWPRRCFeKWdyyqqI2bECmJw8co0hqPqbNnxDAePf3oGYOKHP0Jujr7EarBYOtUCMIW4mDg8uX56dTVYjmOO7OkkVqM49AhhNHg4txAxcam\u002BAAm4oniioAbPDzTzwtZFDrQvsrd/CypOXOrbtPWWI\u002BHf2WVu3Jnn9\u002BtZfrk8laKoAIsIsSWzYKCrld5trfR2ttDT2ZJA46RosTrgLCzFzMyHzOQiZvMR2Xy4EViT4S5JLtVALMmjWJLbWEEU3GG\u002BUCSbi5jNh2TnQ\u002BbypdSVVP6DHHr1g/xrrxxrzs7lkw\u002BoJ7k1K3VDqSPMiR7aRH9bAzfvFcjmQmbmI\u002B7dX\u002BS7i9cLXH6ntQLcN7jn3fxCoT59/j/1HfjoZFMtzOVDliIljJSwqNy\u002Bmy2DH5j\u002BAx0OTsw5xDHxAAAAAElFTkSuQmCC",
+              "WhenOpened": "2026-02-25T19:28:02.772Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
