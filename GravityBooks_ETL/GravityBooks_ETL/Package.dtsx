@@ -506,12 +506,12 @@ LEFT JOIN address_status ads ON ca.status_id = ads.status_id</property>
                           cachedName="publisher_name"
                           lineageId="Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Output].Columns[publisher_name]" />
                         <inputColumn
-                          refId="Package\Load Dim\book_dim\Data Conversion.Inputs[Data Conversion Input].Columns[auther_name]"
+                          refId="Package\Load Dim\book_dim\Data Conversion.Inputs[Data Conversion Input].Columns[author_name]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="8000"
-                          cachedName="auther_name"
-                          lineageId="Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Output].Columns[auther_name]" />
+                          cachedName="author_name"
+                          lineageId="Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Output].Columns[author_name]" />
                         <inputColumn
                           refId="Package\Load Dim\book_dim\Data Conversion.Inputs[Data Conversion Input].Columns[title]"
                           cachedCodepage="1252"
@@ -531,21 +531,21 @@ LEFT JOIN address_status ads ON ca.status_id = ads.status_id</property>
                       synchronousInputId="Package\Load Dim\book_dim\Data Conversion.Inputs[Data Conversion Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Load Dim\book_dim\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of auther_name]"
+                          refId="Package\Load Dim\book_dim\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of author_name]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           length="8000"
-                          lineageId="Package\Load Dim\book_dim\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of auther_name]"
-                          name="Copy of auther_name"
+                          lineageId="Package\Load Dim\book_dim\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of author_name]"
+                          name="Copy of author_name"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the input column used as the source of data for the conversion."
-                              name="SourceInputColumnLineageID">#{Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Output].Columns[auther_name]}</property>
+                              name="SourceInputColumnLineageID">#{Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Output].Columns[author_name]}</property>
                             <property
                               dataType="System.Boolean"
                               description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -748,13 +748,13 @@ LEFT JOIN address_status ads ON ca.status_id = ads.status_id</property>
                           externalMetadataColumnId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[language_name]"
                           lineageId="Package\Load Dim\book_dim\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of language_name]" />
                         <inputColumn
-                          refId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of auther_name]"
+                          refId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of author_name]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="8000"
-                          cachedName="Copy of auther_name"
+                          cachedName="Copy of author_name"
                           externalMetadataColumnId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[author_name]"
-                          lineageId="Package\Load Dim\book_dim\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of auther_name]" />
+                          lineageId="Package\Load Dim\book_dim\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of author_name]" />
                         <inputColumn
                           refId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of publisher_name]"
                           cachedCodepage="1252"
@@ -871,7 +871,7 @@ LEFT JOIN address_status ads ON ca.status_id = ads.status_id</property>
     b.isbn13,
     b.num_pages,
     bl.language_name,
-    STRING_AGG(a.author_name, ', ') AS auther_name,
+    STRING_AGG(a.author_name, ', ') AS author_name,
     p.publisher_name,
     b.publication_date
 FROM book b
@@ -968,15 +968,15 @@ GROUP BY b.book_id, b.title, b.isbn13, b.num_pages,
                           name="language_name"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Output].Columns[auther_name]"
+                          refId="Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Output].Columns[author_name]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[auther_name]"
+                          externalMetadataColumnId="Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[author_name]"
                           length="8000"
-                          lineageId="Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Output].Columns[auther_name]"
-                          name="auther_name"
+                          lineageId="Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Output].Columns[author_name]"
+                          name="author_name"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Output].Columns[publisher_name]"
@@ -1028,11 +1028,11 @@ GROUP BY b.book_id, b.title, b.isbn13, b.num_pages,
                           length="50"
                           name="language_name" />
                         <externalMetadataColumn
-                          refId="Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[auther_name]"
+                          refId="Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[author_name]"
                           codePage="1252"
                           dataType="str"
                           length="8000"
-                          name="auther_name" />
+                          name="author_name" />
                         <externalMetadataColumn
                           refId="Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[publisher_name]"
                           dataType="wstr"
@@ -1082,12 +1082,12 @@ GROUP BY b.book_id, b.title, b.isbn13, b.num_pages,
                           lineageId="Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[language_name]"
                           name="language_name" />
                         <outputColumn
-                          refId="Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[auther_name]"
+                          refId="Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[author_name]"
                           codePage="1252"
                           dataType="str"
                           length="8000"
-                          lineageId="Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[auther_name]"
-                          name="auther_name" />
+                          lineageId="Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[author_name]"
+                          name="author_name" />
                         <outputColumn
                           refId="Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[publisher_name]"
                           dataType="wstr"
@@ -3789,10 +3789,10 @@ JOIN cust_order co ON ol.order_id = co.order_id</property>
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
       DTS:DTSID="{D7FBACF0-4266-4924-B79F-FF42900B6234}"
-      DTS:From="Package\Load Fact"
+      DTS:From="Package\Load Dim"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Load Dim" />
+      DTS:To="Package\Load Fact" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->

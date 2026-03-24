@@ -4,7 +4,7 @@ drop table if exists Sales_fact;
 create table Sales_fact (
     sales_id          INT IDENTITY(1,1) PRIMARY KEY,
     book_key          INT NOT NULL REFERENCES Book_dim(book_key),
-    customer_key      INT NOT NULL REFERENCES Custome_dim(cutomer_key),
+    customer_key      INT NOT NULL REFERENCES Customer_dim(customer_key),
     shipping_method_key INT NOT NULL REFERENCES Shipping_method_dim(shipping_method_key),
     destination_key   INT NOT NULL REFERENCES Address_dim(address_key),
     order_status_key  INT NOT NULL REFERENCES Order_status_dim(order_status_key),
@@ -19,18 +19,20 @@ create table Sales_fact (
 insert into Sales_fact (
     book_key, customer_key, shipping_method_key,
     destination_key, order_status_key, date_key,
-    order_id, price, shipping_cost
+    order_id, price, shipping_cost, quantity, total_sales
 )
 select
     bd.book_key,
-    cd.cutomer_key,
+    cd.customer_key,
     smd.shipping_method_key,
     ad.address_key,
     osd.order_status_key,
     dd.date_key,
     ol.order_id,
     ol.price,
-    sm.cost
+    sm.cost,
+    ol.quantity,
+    (ol.price * ol.quantity) + sm.cost as total_sales
 from gravity_books.dbo.order_line ol
 join gravity_books.dbo.cust_order co on ol.order_id = co.order_id
 join Book_dim bd on ol.book_id = bd.book_id

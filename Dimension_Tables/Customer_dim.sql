@@ -2,7 +2,7 @@ use gravity_books_dwh;
 
 drop table if exists Customer_dim;
 create table Customer_dim(
-	cutomer_key int identity(1,1) primary key,
+	customer_key int identity(1,1) primary key,
 	customer_id int not null,
 	fname varchar(50),
 	lname varchar(50),
@@ -15,4 +15,9 @@ insert into Customer_dim(
 	lname,
 	email
 )
-select * from gravity_books.dbo.customer 
+select 
+	c.customer_id,
+	c.first_name,
+	c.last_name,
+	c.email
+from gravity_books.dbo.customer c;
