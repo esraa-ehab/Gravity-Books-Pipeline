@@ -1,43 +1,43 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="2/25/2026 9:28:02 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="SAMA-SPACE"
   DTS:CreatorName="SAMA-SPACE\samaw"
-  DTS:DTSID="{94443011-462E-4CE1-B5EB-F83D0F1BF048}"
+  DTS:DTSID="{ED5B2195-2DEE-4B59-80C4-61DB3EC97BFA}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="17.0.1010.2"
   DTS:LocaleID="2057"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="29"
-  DTS:VersionGUID="{88EB0775-B2DB-49BD-B397-9F612A8D8A60}">
+  DTS:VersionBuild="43"
+  DTS:VersionGUID="{89151A59-290F-4777-93E6-39565F49C2AF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.gravity_books]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{649C0665-4504-4BD8-8651-D0318C9E7935}"
+      DTS:DTSID="{A7E709D1-1AF8-4695-AA8B-10C5391C79FF}"
       DTS:ObjectName="LocalHost.gravity_books">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=.;Initial Catalog=gravity_books;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{649C0665-4504-4BD8-8651-D0318C9E7935}LocalHost.gravity_books;" />
+          DTS:ConnectionString="Data Source=.;Initial Catalog=gravity_books;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{A7E709D1-1AF8-4695-AA8B-10C5391C79FF}LocalHost.gravity_books;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.gravity_books_DWH]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{381C75BD-D396-4211-B33F-21B489BAAB8F}"
+      DTS:DTSID="{8BD14441-E1B3-4838-ACE9-6534943F2343}"
       DTS:ObjectName="LocalHost.gravity_books_DWH">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=.;Initial Catalog=gravity_books_DWH;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{381C75BD-D396-4211-B33F-21B489BAAB8F}LocalHost.gravity_books_DWH;" />
+          DTS:ConnectionString="Data Source=.;Initial Catalog=gravity_books_DWH;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{8BD14441-E1B3-4838-ACE9-6534943F2343}LocalHost.gravity_books_DWH;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -47,7 +47,7 @@
       DTS:refId="Package\Load Dim"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{1D7B29C0-E6CE-4264-8B10-6464F5A72E88}"
+      DTS:DTSID="{1C325D70-A84E-4558-A02F-379662686CDA}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Load Dim">
@@ -57,7 +57,7 @@
           DTS:refId="Package\Load Dim\address_dim"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{67A3B6F1-7C60-41AF-B4C9-9A605C19C2D4}"
+          DTS:DTSID="{373AEE33-15B2-4AA7-9962-A300DA6319CF}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="address_dim"
@@ -496,7 +496,7 @@ LEFT JOIN address_status ads ON ca.status_id = ads.status_id</property>
           DTS:refId="Package\Load Dim\book_dim"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{7A9811C0-5DA5-405D-833D-B522CCA087A5}"
+          DTS:DTSID="{C416AFEB-9A8C-48AD-A48E-7620014D541D}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="book_dim"
@@ -519,13 +519,6 @@ LEFT JOIN address_status ads ON ca.status_id = ads.status_id</property>
                       name="Data Conversion Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Load Dim\book_dim\Data Conversion.Inputs[Data Conversion Input].Columns[language_name]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="language_name"
-                          lineageId="Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Output].Columns[language_name]" />
-                        <inputColumn
                           refId="Package\Load Dim\book_dim\Data Conversion.Inputs[Data Conversion Input].Columns[publisher_name]"
                           cachedDataType="wstr"
                           cachedLength="1000"
@@ -538,13 +531,6 @@ LEFT JOIN address_status ads ON ca.status_id = ads.status_id</property>
                           cachedLength="8000"
                           cachedName="auther_name"
                           lineageId="Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Output].Columns[auther_name]" />
-                        <inputColumn
-                          refId="Package\Load Dim\book_dim\Data Conversion.Inputs[Data Conversion Input].Columns[title]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="400"
-                          cachedName="title"
-                          lineageId="Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Output].Columns[title]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -557,58 +543,14 @@ LEFT JOIN address_status ads ON ca.status_id = ads.status_id</property>
                       synchronousInputId="Package\Load Dim\book_dim\Data Conversion.Inputs[Data Conversion Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Load Dim\book_dim\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of auther_name]"
+                          refId="Package\Load Dim\book_dim\Data Conversion.Outputs[Data Conversion Output].Columns[publisher_name]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          length="8000"
-                          lineageId="Package\Load Dim\book_dim\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of auther_name]"
-                          name="Copy of auther_name"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the input column used as the source of data for the conversion."
-                              name="SourceInputColumnLineageID">#{Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Output].Columns[auther_name]}</property>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                              name="FastParse">false</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Load Dim\book_dim\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of language_name]"
-                          codePage="1252"
-                          dataType="str"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          length="50"
-                          lineageId="Package\Load Dim\book_dim\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of language_name]"
-                          name="Copy of language_name"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the input column used as the source of data for the conversion."
-                              name="SourceInputColumnLineageID">#{Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Output].Columns[language_name]}</property>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                              name="FastParse">false</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Load Dim\book_dim\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of publisher_name]"
-                          codePage="1252"
-                          dataType="str"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          length="1000"
-                          lineageId="Package\Load Dim\book_dim\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of publisher_name]"
-                          name="Copy of publisher_name"
+                          length="200"
+                          lineageId="Package\Load Dim\book_dim\Data Conversion.Outputs[Data Conversion Output].Columns[publisher_name]"
+                          name="publisher_name"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -623,21 +565,21 @@ LEFT JOIN address_status ads ON ca.status_id = ads.status_id</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Load Dim\book_dim\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of title]"
+                          refId="Package\Load Dim\book_dim\Data Conversion.Outputs[Data Conversion Output].Columns[auther_name]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          length="400"
-                          lineageId="Package\Load Dim\book_dim\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of title]"
-                          name="Copy of title"
+                          length="1000"
+                          lineageId="Package\Load Dim\book_dim\Data Conversion.Outputs[Data Conversion Output].Columns[auther_name]"
+                          name="auther_name"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the input column used as the source of data for the conversion."
-                              name="SourceInputColumnLineageID">#{Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Output].Columns[title]}</property>
+                              name="SourceInputColumnLineageID">#{Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Output].Columns[auther_name]}</property>
                             <property
                               dataType="System.Boolean"
                               description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -687,7 +629,7 @@ LEFT JOIN address_status ads ON ca.status_id = ads.status_id</property>
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[book]</property>
+                      name="OpenRowset">[dbo].[Book_dim]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -730,8 +672,8 @@ LEFT JOIN address_status ads ON ca.status_id = ads.status_id</property>
                   <connections>
                     <connection
                       refId="Package\Load Dim\book_dim\OLE DB Destination.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[LocalHost.gravity_books]"
-                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.gravity_books]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.gravity_books_DWH]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.gravity_books_DWH]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -758,26 +700,50 @@ LEFT JOIN address_status ads ON ca.status_id = ads.status_id</property>
                           externalMetadataColumnId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[isbn13]"
                           lineageId="Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Output].Columns[isbn13]" />
                         <inputColumn
-                          refId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of title]"
+                          refId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[title]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="400"
-                          cachedName="Copy of title"
+                          cachedName="title"
                           externalMetadataColumnId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[title]"
-                          lineageId="Package\Load Dim\book_dim\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of title]" />
+                          lineageId="Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Output].Columns[title]" />
                         <inputColumn
                           refId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[num_pages]"
                           cachedDataType="i4"
                           cachedName="num_pages"
-                          externalMetadataColumnId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[num_pages]"
+                          externalMetadataColumnId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[pages_num]"
                           lineageId="Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Output].Columns[num_pages]" />
+                        <inputColumn
+                          refId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[language_name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="language_name"
+                          externalMetadataColumnId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[language_name]"
+                          lineageId="Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Output].Columns[language_name]" />
                         <inputColumn
                           refId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[publication_date]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="publication_date"
-                          externalMetadataColumnId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[publication_date]"
+                          externalMetadataColumnId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[publish_date]"
                           lineageId="Package\Load Dim\book_dim\OLE DB Source.Outputs[OLE DB Source Output].Columns[publication_date]" />
+                        <inputColumn
+                          refId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[publisher_name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="200"
+                          cachedName="publisher_name"
+                          externalMetadataColumnId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[publisher_name]"
+                          lineageId="Package\Load Dim\book_dim\Data Conversion.Outputs[Data Conversion Output].Columns[publisher_name]" />
+                        <inputColumn
+                          refId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[auther_name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="auther_name"
+                          externalMetadataColumnId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[author_name]"
+                          lineageId="Package\Load Dim\book_dim\Data Conversion.Outputs[Data Conversion Output].Columns[auther_name]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -789,31 +755,44 @@ LEFT JOIN address_status ads ON ca.status_id = ads.status_id</property>
                           refId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[title]"
                           codePage="1252"
                           dataType="str"
-                          length="400"
+                          length="1000"
                           name="title" />
                         <externalMetadataColumn
                           refId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[isbn13]"
                           codePage="1252"
                           dataType="str"
-                          length="13"
+                          length="100"
                           name="isbn13" />
                         <externalMetadataColumn
-                          refId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[language_id]"
+                          refId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[book_key]"
                           dataType="i4"
-                          name="language_id" />
+                          name="book_key" />
                         <externalMetadataColumn
-                          refId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[num_pages]"
+                          refId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[pages_num]"
                           dataType="i4"
-                          name="num_pages" />
+                          name="pages_num" />
                         <externalMetadataColumn
-                          refId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[publication_date]"
-                          dataType="wstr"
-                          length="10"
-                          name="publication_date" />
+                          refId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[language_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="language_name" />
                         <externalMetadataColumn
-                          refId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[publisher_id]"
-                          dataType="i4"
-                          name="publisher_id" />
+                          refId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[author_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1000"
+                          name="author_name" />
+                        <externalMetadataColumn
+                          refId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[publisher_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="200"
+                          name="publisher_name" />
+                        <externalMetadataColumn
+                          refId="Package\Load Dim\book_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[publish_date]"
+                          dataType="dbTimeStamp"
+                          name="publish_date" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -1139,7 +1118,7 @@ GROUP BY b.book_id, b.title, b.isbn13, b.num_pages,
           DTS:refId="Package\Load Dim\customer_dim"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{E596C556-ED51-4D2A-A127-CD3B40006CFE}"
+          DTS:DTSID="{A78A1FA4-60C8-40F8-8E57-2BAB570A5B8C}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="customer_dim"
@@ -1165,7 +1144,7 @@ GROUP BY b.book_id, b.title, b.isbn13, b.num_pages,
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[customer]</property>
+                      name="OpenRowset">[dbo].[Customer_dim]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1208,8 +1187,8 @@ GROUP BY b.book_id, b.title, b.isbn13, b.num_pages,
                   <connections>
                     <connection
                       refId="Package\Load Dim\customer_dim\OLE DB Destination.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[LocalHost.gravity_books]"
-                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.gravity_books]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.gravity_books_DWH]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.gravity_books_DWH]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -1228,22 +1207,6 @@ GROUP BY b.book_id, b.title, b.isbn13, b.num_pages,
                           externalMetadataColumnId="Package\Load Dim\customer_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
                           lineageId="Package\Load Dim\customer_dim\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_id]" />
                         <inputColumn
-                          refId="Package\Load Dim\customer_dim\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[first_name]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="200"
-                          cachedName="first_name"
-                          externalMetadataColumnId="Package\Load Dim\customer_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
-                          lineageId="Package\Load Dim\customer_dim\OLE DB Source.Outputs[OLE DB Source Output].Columns[first_name]" />
-                        <inputColumn
-                          refId="Package\Load Dim\customer_dim\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[last_name]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="200"
-                          cachedName="last_name"
-                          externalMetadataColumnId="Package\Load Dim\customer_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[last_name]"
-                          lineageId="Package\Load Dim\customer_dim\OLE DB Source.Outputs[OLE DB Source Output].Columns[last_name]" />
-                        <inputColumn
                           refId="Package\Load Dim\customer_dim\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[email]"
                           cachedCodepage="1252"
                           cachedDataType="str"
@@ -1251,6 +1214,22 @@ GROUP BY b.book_id, b.title, b.isbn13, b.num_pages,
                           cachedName="email"
                           externalMetadataColumnId="Package\Load Dim\customer_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[email]"
                           lineageId="Package\Load Dim\customer_dim\OLE DB Source.Outputs[OLE DB Source Output].Columns[email]" />
+                        <inputColumn
+                          refId="Package\Load Dim\customer_dim\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[first_name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="200"
+                          cachedName="first_name"
+                          externalMetadataColumnId="Package\Load Dim\customer_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fname]"
+                          lineageId="Package\Load Dim\customer_dim\OLE DB Source.Outputs[OLE DB Source Output].Columns[first_name]" />
+                        <inputColumn
+                          refId="Package\Load Dim\customer_dim\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[last_name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="200"
+                          cachedName="last_name"
+                          externalMetadataColumnId="Package\Load Dim\customer_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[lname]"
+                          lineageId="Package\Load Dim\customer_dim\OLE DB Source.Outputs[OLE DB Source Output].Columns[last_name]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1259,23 +1238,27 @@ GROUP BY b.book_id, b.title, b.isbn13, b.num_pages,
                           dataType="i4"
                           name="customer_id" />
                         <externalMetadataColumn
-                          refId="Package\Load Dim\customer_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
-                          codePage="1252"
-                          dataType="str"
-                          length="200"
-                          name="first_name" />
-                        <externalMetadataColumn
-                          refId="Package\Load Dim\customer_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[last_name]"
-                          codePage="1252"
-                          dataType="str"
-                          length="200"
-                          name="last_name" />
-                        <externalMetadataColumn
                           refId="Package\Load Dim\customer_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[email]"
                           codePage="1252"
                           dataType="str"
                           length="350"
                           name="email" />
+                        <externalMetadataColumn
+                          refId="Package\Load Dim\customer_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[customer_key]"
+                          dataType="i4"
+                          name="customer_key" />
+                        <externalMetadataColumn
+                          refId="Package\Load Dim\customer_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fname]"
+                          codePage="1252"
+                          dataType="str"
+                          length="200"
+                          name="fname" />
+                        <externalMetadataColumn
+                          refId="Package\Load Dim\customer_dim\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[lname]"
+                          codePage="1252"
+                          dataType="str"
+                          length="200"
+                          name="lname" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -1498,7 +1481,7 @@ FROM customer</property>
           DTS:refId="Package\Load Dim\date_dim"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{6D54B4EB-7AFB-470D-9351-E5D64DABDF1B}"
+          DTS:DTSID="{B1422F03-580B-4E6B-9554-1CCE4AEEA5B5}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="date_dim"
@@ -1865,7 +1848,7 @@ WHERE order_date IS NOT NULL</property>
           DTS:refId="Package\Load Dim\orderstatus_dim"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{A43FCC7B-2F65-4022-8CD9-37A2C4E28F71}"
+          DTS:DTSID="{F0E0F2E8-E735-4C0B-9CF9-F62A45D73242}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="orderstatus_dim"
@@ -2172,7 +2155,7 @@ on os.status_id = oh.status_id;</property>
           DTS:refId="Package\Load Dim\shippingmethod_dim"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{DAA1C2DF-E5DD-4367-8D3A-734CEEF8B756}"
+          DTS:DTSID="{8622A800-EA7F-4F0F-95B2-A26F054EDEAB}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="shippingmethod_dim"
@@ -2485,7 +2468,7 @@ FROM shipping_method</property>
       DTS:refId="Package\Load Fact"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{31985969-4738-4B01-ACFE-54B6F541317B}"
+      DTS:DTSID="{5D398D4A-F0F2-417E-99EC-0273C19B37EF}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Load Fact">
@@ -2495,7 +2478,7 @@ FROM shipping_method</property>
           DTS:refId="Package\Load Fact\Sales Fact"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{F8B929B1-D2C5-49D7-8DEC-AABCA3696D06}"
+          DTS:DTSID="{F71CA79F-4CA9-4E00-B5CE-06932D25D3D6}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Sales Fact"
@@ -2505,80 +2488,6 @@ FROM shipping_method</property>
             <pipeline
               version="1">
               <components>
-                <component
-                  refId="Package\Load Fact\Sales Fact\Derived Column"
-                  componentClassID="Microsoft.DerivedColumn"
-                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-                  name="Derived Column"
-                  usesDispositions="true">
-                  <inputs>
-                    <input
-                      refId="Package\Load Fact\Sales Fact\Derived Column.Inputs[Derived Column Input]"
-                      description="Input to the Derived Column Transformation"
-                      name="Derived Column Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Load Fact\Sales Fact\Derived Column.Inputs[Derived Column Input].Columns[order_date]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="order_date"
-                          errorOrTruncationOperation="Computation"
-                          errorRowDisposition="FailComponent"
-                          lineageId="Package\Load Fact\Sales Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_date]"
-                          truncationRowDisposition="FailComponent"
-                          usageType="readWrite">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Expression"
-                              name="Expression">(DT_I4)(([YEAR](#{Package\Load Fact\Sales Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_date]}) * 10000) + ([MONTH](#{Package\Load Fact\Sales Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_date]}) * 100) + [DAY](#{Package\Load Fact\Sales Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_date]}))</property>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Friendly Expression"
-                              expressionType="Notify"
-                              name="FriendlyExpression">(DT_I4)((YEAR(order_date) * 10000) + (MONTH(order_date) * 100) + DAY(order_date))</property>
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Load Fact\Sales Fact\Derived Column.Outputs[Derived Column Output]"
-                      description="Default Output of the Derived Column Transformation"
-                      exclusionGroup="1"
-                      name="Derived Column Output"
-                      synchronousInputId="Package\Load Fact\Sales Fact\Derived Column.Inputs[Derived Column Input]">
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Load Fact\Sales Fact\Derived Column.Outputs[Derived Column Error Output]"
-                      description="Error Output of the Derived Column Transformation"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="Derived Column Error Output"
-                      synchronousInputId="Package\Load Fact\Sales Fact\Derived Column.Inputs[Derived Column Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Load Fact\Sales Fact\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Load Fact\Sales Fact\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Load Fact\Sales Fact\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Load Fact\Sales Fact\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
                 <component
                   refId="Package\Load Fact\Sales Fact\Lookup"
                   componentClassID="Microsoft.Lookup"
@@ -3414,15 +3323,18 @@ where [refTable].[order_status_id] = ?</property>
                       description="The SQL command to be executed."
                       name="SqlCommand"
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+    o.order_id,
+    CONVERT(INT, FORMAT(o.order_date, 'yyyyMMdd')) as date_key,
+    o.customer_id,
+    o.shipping_method_id,
+    ISNULL(o.dest_address_id, 1) as dest_address_id,
     ol.book_id,
-    co.customer_id,
-    co.shipping_method_id,
-    co.dest_address_id,
-    co.order_date,
-    co.order_id,
-    ol.price
-FROM order_line ol
-JOIN cust_order co ON ol.order_id = co.order_id</property>
+    ol.price,
+    1 as quantity
+FROM cust_order o
+INNER JOIN order_line ol ON o.order_id = ol.order_id
+WHERE o.order_date IS NOT NULL
+  AND YEAR(o.order_date) BETWEEN 2000 AND 2030;</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -3495,15 +3407,6 @@ JOIN cust_order co ON ol.order_id = co.order_id</property>
                           name="dest_address_id"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Load Fact\Sales Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_date]"
-                          dataType="dbTimeStamp"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load Fact\Sales Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_date]"
-                          lineageId="Package\Load Fact\Sales Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_date]"
-                          name="order_date"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\Load Fact\Sales Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_id]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
@@ -3522,6 +3425,24 @@ JOIN cust_order co ON ol.order_id = co.order_id</property>
                           name="price"
                           precision="5"
                           scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Fact\Sales Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[date_key]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Fact\Sales Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[date_key]"
+                          lineageId="Package\Load Fact\Sales Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[date_key]"
+                          name="date_key"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Fact\Sales Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[quantity]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Fact\Sales Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[quantity]"
+                          lineageId="Package\Load Fact\Sales Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[quantity]"
+                          name="quantity"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -3543,10 +3464,6 @@ JOIN cust_order co ON ol.order_id = co.order_id</property>
                           dataType="i4"
                           name="dest_address_id" />
                         <externalMetadataColumn
-                          refId="Package\Load Fact\Sales Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_date]"
-                          dataType="dbTimeStamp"
-                          name="order_date" />
-                        <externalMetadataColumn
                           refId="Package\Load Fact\Sales Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_id]"
                           dataType="i4"
                           name="order_id" />
@@ -3556,6 +3473,14 @@ JOIN cust_order co ON ol.order_id = co.order_id</property>
                           name="price"
                           precision="5"
                           scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact\Sales Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[date_key]"
+                          dataType="i4"
+                          name="date_key" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact\Sales Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[quantity]"
+                          dataType="i4"
+                          name="quantity" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -3568,6 +3493,11 @@ JOIN cust_order co ON ol.order_id = co.order_id</property>
                           dataType="i4"
                           lineageId="Package\Load Fact\Sales Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[book_id]"
                           name="book_id" />
+                        <outputColumn
+                          refId="Package\Load Fact\Sales Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[date_key]"
+                          dataType="i4"
+                          lineageId="Package\Load Fact\Sales Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[date_key]"
+                          name="date_key" />
                         <outputColumn
                           refId="Package\Load Fact\Sales Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[customer_id]"
                           dataType="i4"
@@ -3584,11 +3514,6 @@ JOIN cust_order co ON ol.order_id = co.order_id</property>
                           lineageId="Package\Load Fact\Sales Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dest_address_id]"
                           name="dest_address_id" />
                         <outputColumn
-                          refId="Package\Load Fact\Sales Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_date]"
-                          dataType="dbTimeStamp"
-                          lineageId="Package\Load Fact\Sales Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_date]"
-                          name="order_date" />
-                        <outputColumn
                           refId="Package\Load Fact\Sales Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_id]"
                           dataType="i4"
                           lineageId="Package\Load Fact\Sales Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_id]"
@@ -3600,6 +3525,11 @@ JOIN cust_order co ON ol.order_id = co.order_id</property>
                           name="price"
                           precision="5"
                           scale="2" />
+                        <outputColumn
+                          refId="Package\Load Fact\Sales Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[quantity]"
+                          dataType="i4"
+                          lineageId="Package\Load Fact\Sales Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[quantity]"
+                          name="quantity" />
                         <outputColumn
                           refId="Package\Load Fact\Sales Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -3619,11 +3549,6 @@ JOIN cust_order co ON ol.order_id = co.order_id</property>
                 </component>
               </components>
               <paths>
-                <path
-                  refId="Package\Load Fact\Sales Fact.Paths[Derived Column Output]"
-                  endId="Package\Load Fact\Sales Fact\Lookup.Inputs[Lookup Input]"
-                  name="Derived Column Output"
-                  startId="Package\Load Fact\Sales Fact\Derived Column.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Load Fact\Sales Fact.Paths[Lookup Match Output]"
                   endId="Package\Load Fact\Sales Fact\Lookup 1.Inputs[Lookup Input]"
@@ -3646,7 +3571,7 @@ JOIN cust_order co ON ol.order_id = co.order_id</property>
                   startId="Package\Load Fact\Sales Fact\Lookup 3.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Load Fact\Sales Fact.Paths[OLE DB Source Output]"
-                  endId="Package\Load Fact\Sales Fact\Derived Column.Inputs[Derived Column Input]"
+                  endId="Package\Load Fact\Sales Fact\Lookup.Inputs[Lookup Input]"
                   name="OLE DB Source Output"
                   startId="Package\Load Fact\Sales Fact\OLE DB Source.Outputs[OLE DB Source Output]" />
               </paths>
@@ -3660,7 +3585,7 @@ JOIN cust_order co ON ol.order_id = co.order_id</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{B0B50DE7-0461-4F1D-9D28-5E67330084F8}"
+      DTS:DTSID="{87AF923A-7CD5-4C39-8DE8-A33493C0007D}"
       DTS:From="Package\Load Dim"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -3726,14 +3651,14 @@ JOIN cust_order co ON ol.order_id = co.order_id</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,72.6640967062658"
+              EndConnector="0,72.6640967062655"
               Start="0,0"
-              End="0,65.1640967062658">
+              End="0,65.1640967062655">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,65.1640967062658" />
+                    End="0,65.1640967062655" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3822,43 +3747,43 @@ JOIN cust_order co ON ol.order_id = co.order_id</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="145.476923076924,41.3538461538462"
+          Id="Package\Load Dim\book_dim\OLE DB Source"
+          TopLeft="123.499997509023,27.4999995355805" />
+        <NodeLayout
           Size="163.2,41.3538461538462"
           Id="Package\Load Dim\book_dim\OLE DB Destination"
           TopLeft="325.499995778004,179.499998860061" />
         <NodeLayout
           Size="149.169230769231,41.3538461538462"
           Id="Package\Load Dim\book_dim\Data Conversion"
-          TopLeft="307.499995524685,97.49999995778" />
-        <NodeLayout
-          Size="145.476923076924,41.3538461538462"
-          Id="Package\Load Dim\book_dim\OLE DB Source"
-          TopLeft="123.499997509023,27.4999995355805" />
+          TopLeft="440.49999081716,71.4999986067415" />
         <EdgeLayout
           Id="Package\Load Dim\book_dim.Paths[OLE DB Source Output]"
-          TopLeft="196.238459047484,68.8538456894266">
+          TopLeft="268.976920585946,48.1769226125036">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="185.846151861816,28.6461542683534"
+              EndConnector="171.523070231213,43.999999071161"
               Start="0,0"
-              End="185.846151861816,21.1461542683534">
+              End="164.023070231213,43.999999071161">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.3230771341767" />
+                    End="81.7615351156067,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,10.3230771341767"
-                    Point2="0,14.3230771341767"
-                    Point3="4,14.3230771341767" />
+                    Point1="81.7615351156067,0"
+                    Point2="85.7615351156067,0"
+                    Point3="85.7615351156067,4" />
                   <mssgle:LineSegment
-                    End="181.846151861816,14.3230771341767" />
+                    End="85.7615351156067,39.999999071161" />
                   <mssgle:CubicBezierSegment
-                    Point1="181.846151861816,14.3230771341767"
-                    Point2="185.846151861816,14.3230771341767"
-                    Point3="185.846151861816,18.3230771341767" />
+                    Point1="85.7615351156067,39.999999071161"
+                    Point2="85.7615351156067,43.999999071161"
+                    Point3="89.7615351156067,43.999999071161" />
                   <mssgle:LineSegment
-                    End="185.846151861816,21.1461542683534" />
+                    End="164.023070231213,43.999999071161" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3869,30 +3794,30 @@ JOIN cust_order co ON ol.order_id = co.order_id</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Dim\book_dim.Paths[Data Conversion Output]"
-          TopLeft="382.0846109093,138.853846111626">
+          TopLeft="515.084606201775,112.853844760588">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="25.0153848687044,40.646152748435"
+              EndConnector="-107.984610423771,66.6461540994734"
               Start="0,0"
-              End="25.0153848687044,33.146152748435">
+              End="-107.984610423771,59.1461540994734">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.3230763742175" />
+                    End="0,29.3230770497367" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.3230763742175"
-                    Point2="0,20.3230763742175"
-                    Point3="4,20.3230763742175" />
+                    Point1="0,29.3230770497367"
+                    Point2="0,33.3230770497367"
+                    Point3="-4,33.3230770497367" />
                   <mssgle:LineSegment
-                    End="21.0153848687044,20.3230763742175" />
+                    End="-103.984610423771,33.3230770497367" />
                   <mssgle:CubicBezierSegment
-                    Point1="21.0153848687044,20.3230763742175"
-                    Point2="25.0153848687044,20.3230763742175"
-                    Point3="25.0153848687044,24.3230763742175" />
+                    Point1="-103.984610423771,33.3230770497367"
+                    Point2="-107.984610423771,33.3230770497367"
+                    Point3="-107.984610423771,37.3230770497367" />
                   <mssgle:LineSegment
-                    End="25.0153848687044,33.146152748435" />
+                    End="-107.984610423771,59.1461540994734" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3931,13 +3856,13 @@ JOIN cust_order co ON ol.order_id = co.order_id</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="163.2,41.3538461538462"
-          Id="Package\Load Dim\customer_dim\OLE DB Destination"
-          TopLeft="261.499995229145,160.499997361253" />
-        <NodeLayout
           Size="145.476923076924,41.3538461538462"
           Id="Package\Load Dim\customer_dim\OLE DB Source"
           TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="163.2,41.3538461538462"
+          Id="Package\Load Dim\customer_dim\OLE DB Destination"
+          TopLeft="261.499995229145,160.499997361253" />
         <EdgeLayout
           Id="Package\Load Dim\customer_dim.Paths[OLE DB Source Output]"
           TopLeft="78.2384615384615,46.8538461538461">
@@ -4253,6 +4178,10 @@ JOIN cust_order co ON ol.order_id = co.order_id</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="163.2,41.3538461538462"
+          Id="Package\Load Fact\Sales Fact\OLE DB Destination"
+          TopLeft="183.499996242424,532.776917651659" />
+        <NodeLayout
           Size="145.476923076924,41.3538461538462"
           Id="Package\Load Fact\Sales Fact\OLE DB Source"
           TopLeft="5.5,5.5" />
@@ -4265,10 +4194,6 @@ JOIN cust_order co ON ol.order_id = co.order_id</property>
           Id="Package\Load Fact\Sales Fact\Lookup 3"
           TopLeft="262.499994574736,356.207685636939" />
         <NodeLayout
-          Size="163.2,41.3538461538462"
-          Id="Package\Load Fact\Sales Fact\OLE DB Destination"
-          TopLeft="183.499996242424,532.776917651659" />
-        <NodeLayout
           Size="109.292307692308,41.3538461538462"
           Id="Package\Load Fact\Sales Fact\Lookup"
           TopLeft="80.499999050051,91.4999988178412" />
@@ -4277,177 +4202,31 @@ JOIN cust_order co ON ol.order_id = co.order_id</property>
           Id="Package\Load Fact\Sales Fact\Lookup 2"
           TopLeft="299.249995698842,264.749996427136" />
         <EdgeLayout
-          Id="Package\Load Fact\Sales Fact.Paths[Lookup Match Output]"
-          TopLeft="135.146152896205,132.853844971687">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="70.6923069112387,60.6461523262357"
-              Start="0,0"
-              End="70.6923069112387,53.1461523262357">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.3230761631178" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.3230761631178"
-                    Point2="0,30.3230761631178"
-                    Point3="4,30.3230761631178" />
-                  <mssgle:LineSegment
-                    End="66.6923069112387,30.3230761631178" />
-                  <mssgle:CubicBezierSegment
-                    Point1="66.6923069112387,30.3230761631178"
-                    Point2="70.6923069112387,30.3230761631178"
-                    Point3="70.6923069112387,34.3230761631178" />
-                  <mssgle:LineSegment
-                    End="70.6923069112387,53.1461523262357" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-12.8452332631307,35.3230761631178,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Fact\Sales Fact.Paths[Lookup Match Output1]"
-          TopLeft="205.838459807444,234.853843451769">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="151.74999742986,29.8961529753671"
-              Start="0,0"
-              End="151.74999742986,22.3961529753671">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10.9480764876836" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.9480764876836"
-                    Point2="0,14.9480764876836"
-                    Point3="4,14.9480764876836" />
-                  <mssgle:LineSegment
-                    End="147.74999742986,14.9480764876836" />
-                  <mssgle:CubicBezierSegment
-                    Point1="147.74999742986,14.9480764876836"
-                    Point2="151.74999742986,14.9480764876836"
-                    Point3="151.74999742986,18.9480764876836" />
-                  <mssgle:LineSegment
-                    End="151.74999742986,22.3961529753671" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="27.6836119961799,19.9480764876836,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Fact\Sales Fact.Paths[Lookup Match Output2]"
-          TopLeft="357.588457237303,306.103842580982">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-36.7500011241059,50.1038430559565"
-              Start="0,0"
-              End="-36.7500011241059,42.6038430559565">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.0519215279783" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.0519215279783"
-                    Point2="0,25.0519215279783"
-                    Point3="-4,25.0519215279783" />
-                  <mssgle:LineSegment
-                    End="-32.7500011241059,25.0519215279783" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-32.7500011241059,25.0519215279783"
-                    Point2="-36.7500011241059,25.0519215279783"
-                    Point3="-36.7500011241059,29.0519215279783" />
-                  <mssgle:LineSegment
-                    End="-36.7500011241059,42.6038430559565" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-66.566387280803,30.0519215279783,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="146.215384615385,41.3538461538462"
-          Id="Package\Load Fact\Sales Fact\Derived Column"
-          TopLeft="282.999994141981,49.2499990764385" />
-        <EdgeLayout
           Id="Package\Load Fact\Sales Fact.Paths[OLE DB Source Output]"
-          TopLeft="150.976923076923,26.1769230769231">
+          TopLeft="78.2384615384615,46.8538461538461">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="132.023071065058,43.7499990764385"
+              EndConnector="56.9076913577433,44.6461526639951"
               Start="0,0"
-              End="124.523071065058,43.7499990764385">
+              End="56.9076913577433,37.1461526639951">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="62.011535532529,0" />
+                    End="0,18.3230763319975" />
                   <mssgle:CubicBezierSegment
-                    Point1="62.011535532529,0"
-                    Point2="66.011535532529,0"
-                    Point3="66.011535532529,4" />
+                    Point1="0,18.3230763319975"
+                    Point2="0,22.3230763319975"
+                    Point3="4,22.3230763319975" />
                   <mssgle:LineSegment
-                    End="66.011535532529,39.7499990764385" />
+                    End="52.9076913577433,22.3230763319975" />
                   <mssgle:CubicBezierSegment
-                    Point1="66.011535532529,39.7499990764385"
-                    Point2="66.011535532529,43.7499990764385"
-                    Point3="70.011535532529,43.7499990764385" />
+                    Point1="52.9076913577433,22.3230763319975"
+                    Point2="56.9076913577433,22.3230763319975"
+                    Point3="56.9076913577433,26.3230763319975" />
                   <mssgle:LineSegment
-                    End="124.523071065058,43.7499990764385" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Fact\Sales Fact.Paths[Derived Column Output]"
-          TopLeft="282.999994141981,75.4858965123359">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-93.2076873996223,36.6910253824284"
-              Start="0,0"
-              End="-85.7076873996223,36.6910253824284">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-35.3662267126199,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-35.3662267126199,0"
-                    Point2="-39.3662267126199,0"
-                    Point3="-39.3662267126199,4" />
-                  <mssgle:LineSegment
-                    End="-39.3662267126199,32.6910253824284" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-39.3662267126199,32.6910253824284"
-                    Point2="-39.3662267126199,36.6910253824284"
-                    Point3="-43.3662267126199,36.6910253824284" />
-                  <mssgle:LineSegment
-                    End="-85.7076873996223,36.6910253824284" />
+                    End="56.9076913577433,37.1461526639951" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4492,63 +4271,117 @@ JOIN cust_order co ON ol.order_id = co.order_id</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Fact\Sales Fact.Paths[Lookup Match Output2]"
+          TopLeft="357.588457237303,306.103842580982">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-36.7500011241059,50.1038430559565"
+              Start="0,0"
+              End="-36.7500011241059,42.6038430559565">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.0519215279783" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.0519215279783"
+                    Point2="0,25.0519215279783"
+                    Point3="-4,25.0519215279783" />
+                  <mssgle:LineSegment
+                    End="-32.7500011241059,25.0519215279783" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-32.7500011241059,25.0519215279783"
+                    Point2="-36.7500011241059,25.0519215279783"
+                    Point3="-36.7500011241059,29.0519215279783" />
+                  <mssgle:LineSegment
+                    End="-36.7500011241059,42.6038430559565" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-66.566387280803,30.0519215279783,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Fact\Sales Fact.Paths[Lookup Match Output1]"
+          TopLeft="205.838459807444,234.853843451769">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="151.74999742986,29.8961529753671"
+              Start="0,0"
+              End="151.74999742986,22.3961529753671">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.9480764876836" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.9480764876836"
+                    Point2="0,14.9480764876836"
+                    Point3="4,14.9480764876836" />
+                  <mssgle:LineSegment
+                    End="147.74999742986,14.9480764876836" />
+                  <mssgle:CubicBezierSegment
+                    Point1="147.74999742986,14.9480764876836"
+                    Point2="151.74999742986,14.9480764876836"
+                    Point3="151.74999742986,18.9480764876836" />
+                  <mssgle:LineSegment
+                    End="151.74999742986,22.3961529753671" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="27.68361199618,19.9480764876836,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Fact\Sales Fact.Paths[Lookup Match Output]"
+          TopLeft="135.146152896205,132.853844971687">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="70.6923069112387,60.6461523262357"
+              Start="0,0"
+              End="70.6923069112387,53.1461523262357">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.3230761631178" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.3230761631178"
+                    Point2="0,30.3230761631178"
+                    Point3="4,30.3230761631178" />
+                  <mssgle:LineSegment
+                    End="66.6923069112387,30.3230761631178" />
+                  <mssgle:CubicBezierSegment
+                    Point1="66.6923069112387,30.3230761631178"
+                    Point2="70.6923069112387,30.3230761631178"
+                    Point3="70.6923069112387,34.3230761631178" />
+                  <mssgle:LineSegment
+                    End="70.6923069112387,53.1461523262357" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-12.8452332631307,35.3230761631178,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Fact\Sales Fact\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Fact\Sales Fact\Lookup 1">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Book_dim]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Fact\Sales Fact\Lookup 3">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Order_status_dim]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load Fact\Sales Fact\OLE DB Destination">
     <Properties>
@@ -4563,12 +4396,66 @@ JOIN cust_order co ON ol.order_id = co.order_id</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Load Fact\Sales Fact\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Fact\Sales Fact\Lookup 1">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Book_dim]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Fact\Sales Fact\Lookup 3">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Order_status_dim]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Load Fact\Sales Fact\Lookup">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -4578,7 +4465,7 @@ JOIN cust_order co ON ol.order_id = co.order_id</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4591,7 +4478,7 @@ JOIN cust_order co ON ol.order_id = co.order_id</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -4601,7 +4488,7 @@ JOIN cust_order co ON ol.order_id = co.order_id</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

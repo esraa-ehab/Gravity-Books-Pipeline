@@ -7,6 +7,6 @@
     <DTS:ConnectionManager
       DTS:ConnectRetryCount="1"
       DTS:ConnectRetryInterval="5"
-      DTS:ConnectionString="Data Source=.;Initial Catalog=gravity_books_DWH;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-GravityBooks_ETL-{BA2900A5-DF3E-4EBF-B10E-DEA7EE4EBF3E}LocalHost.gravity_books_DWH;Auto Translate=False;" />
+      DTS:ConnectionString="Data Source=.;Initial Catalog=gravity_books_DWH;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-GravityBooks_ETL-{BA2900A5-DF3E-4EBF-B10E-DEA7EE4EBF3E}LocalHost.gravity_books_DWH;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>
