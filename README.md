@@ -1,81 +1,150 @@
-# Gravity Books Data Warehouse (ETL)
+# 📚 Gravity Books - Data Warehouse
 
-This project builds a **star schema data warehouse** for the Gravity Books dataset using an **ETL process**.
+> **Transactional bookstore data → Analytics-ready star schema**, built two ways.
 
-It was implemented using **two approaches**:
+---
 
-1. **SQL scripts**
-2. **SSIS package**
+## ✦ Overview
 
-## Project Goal
+This project transforms raw `gravity_books` transactional data into a clean, query-optimized **star schema data warehouse** (`gravity_books_dwh`), implemented via two parallel ETL approaches:
 
-Take transactional bookstore data from `gravity_books` and load it into `gravity_books_dwh` in analytics-friendly star schema form.
+| Approach | Description |
+|----------|-------------|
+| 🗄️ **SQL Scripts** | Pure SQL --> schema creation, staging, dimension & fact loading |
+| 📦 **SSIS Package** | Visual ETL pipeline via SQL Server Integration Services |
 
-## Data Model (Star Schema)
+A **Power BI dashboard** sits on top for sales analysis and business reporting.
 
-- **Fact table**: `Sales_fact`
-- **Dimension tables**:
-  - `Address_dim`
-  - `Book_dim`
-  - `Customer_dim`
-  - `Date_dim`
-  - `Order_status_dim`
-  - `Shipping_method_dim`
+---
 
-Model files:
-- Draw.io source: `Data_Model_Diagram/data_model.drawio`
-- PNG preview: `Data_Model_Diagram/Gravity_Books_dm.png`
+## ⭐ Star Schema - Data Model
+
+**Fact Table**
+```
+Sales_fact
+```
+
+**Dimension Tables**
+
+```
+Address_dim        Book_dim           Customer_dim
+Date_dim           Order_status_dim   Shipping_method_dim
+```
+
+> 📐 Model source: `Data_Model_Diagram/data_model.drawio`
+> 🖼️ PNG preview: `Data_Model_Diagram/Gravity_Books_dm.png`
 
 ![Star Schema](Data_Model_Diagram/Gravity_Books_dm.png)
 
-## Repository Structure
+---
 
-- `Data/` → source backup (`gravity_books.bak`)
-- `SQL/` → SQL-based ETL implementation
-  - `schema/`
-  - `stage_layer/`
-  - `load_layer/`
-- `SSIS/` → SSIS-based ETL implementation
-- `assets/screenshots/` → ETL and output screenshots
+## 📊 Power BI Dashboard
 
-## Approach 1: SQL Scripts
+Built on top of the warehouse to support sales analysis and business reporting.
 
-The SQL implementation follows a classic ETL sequence:
+> 📝 Notes: `assets/screenshots/power_bi_dashboard.png`
 
-- **Schema creation**
-  - Creates all dimension and fact tables in the warehouse.
-  - Defines keys and relationships needed for star schema analytics.
+![Power BI Dashboard](assets/screenshots/power_bi_dashboard.png)
 
-- **Staging layer**
-  - Extracts source records into staging tables.
-  - Separates raw ingestion from final warehouse loading.
+---
 
-- **Dimension loading**
-  - Transforms and loads descriptive entities (books, customers, dates, addresses, shipping methods, order status).
-  - Prepares clean lookup dimensions for fact loading.
+## 🗂️ Repository Structure
 
-- **Fact loading**
-  - Loads transaction-level sales records into `Sales_fact`.
-  - Resolves dimension keys and computes core business metrics like `total_sales`.
+```
+gravity-books-dwh/
+│
+├── Data/
+│   ├── Gravity_books_DWH
+│   └── gravity_books.bak          ← Source database backup
+│
+├── SQL/                           ← Approach 1: SQL ETL
+│   ├── schema/                    ← Table definitions & relationships
+│   ├── stage_layer/               ← Raw staging extraction
+│   └── load_layer/                ← Dimension & fact loading
+│
+├── SSIS/                          ← Approach 2: SSIS ETL
+│   └── GravityBooks_ETL/
+│       └── Package.dtsx           ← Main SSIS package
+│
+├── Data_Model_Diagram/
+│   ├── data_model.drawio
+│   └── Gravity_Books_dm.png
+│
+├── Data Visualization/
+│   ├── gravity_books_Dashboard.pbix
+│   └── powerbi.txt
+│
+└── assets/screenshots/            ← ETL & dashboard screenshots
+```
 
-## Approach 2: SSIS
+---
 
-SSIS implementation is under `SSIS/GravityBooks_ETL/`.
+## 🔧 Approach 1 - SQL Scripts
 
-Main package:
-- `SSIS/GravityBooks_ETL/Package.dtsx`
+A classic three-layer ETL sequence:
 
-## ETL Screenshots
+### 1. Schema Creation
+- Creates all dimension and fact tables in the warehouse
+- Defines primary/foreign keys and star schema relationships
+
+### 2. Staging Layer
+- Extracts source records into staging tables
+- Isolates raw ingestion from warehouse loading logic
+
+### 3. Dimension Loading
+Transforms and loads descriptive entities:
+- `Book_dim` — titles, authors, genres
+- `Customer_dim` — customer profiles
+- `Address_dim` — delivery and billing addresses
+- `Date_dim` — full date hierarchy for time-based analysis
+- `Shipping_method_dim` — carrier and method details
+- `Order_status_dim` — order lifecycle stages
+
+### 4. Fact Loading
+- Loads transaction-level records into `Sales_fact`
+- Resolves all dimension surrogate keys
+- Computes `total_sales` and other core business metrics
+
+---
+
+## 📦 Approach 2 - SSIS
+
+Visual ETL pipeline implemented in SQL Server Integration Services.
+
+**Entry point:** `SSIS/GravityBooks_ETL/Package.dtsx`
 
 ### Control Flow
-![Control flow](assets/screenshots/Control%20flow.jpeg)
+![Control Flow](assets/screenshots/Control%20flow.jpeg)
 
-### Fact Load (Lookups)
-![Fact Load](assets/screenshots/Fact_Load_Lookups.jpeg)
+### Fact Load - Dimension Lookups
+![Fact Load Lookups](assets/screenshots/Fact_Load_Lookups.jpeg)
 
+---
 
-## Quick Start
+## 🚀 Quick Start
 
-1. Restore `Data/gravity_books.bak`.
-2. Create/use database `gravity_books_dwh`.
-3. Run SQL approach from `SQL/` **or** run SSIS package from `SSIS/`.
+```sql
+-- Step 1: Restore source database
+RESTORE DATABASE gravity_books FROM DISK = 'Data/gravity_books.bak'
+
+-- Step 2: Create warehouse database
+CREATE DATABASE gravity_books_dwh
+```
+
+Then choose your ETL approach:
+
+**Option A — SQL**
+```
+Run scripts in order:
+  SQL/schema/ → SQL/stage_layer/ → SQL/load_layer/
+```
+
+**Option B — SSIS**
+```
+Open and execute:
+  SSIS/GravityBooks_ETL/Package.dtsx
+```
+
+---
+
+*Built with SQL Server · SSIS · Power BI*
